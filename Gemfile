@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
-gem 'selenium-webdriver'
+
 # Install devise
 gem 'devise'
-gem 'puma'
 
 # Install pundit
 gem 'pundit'

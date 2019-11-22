@@ -1,7 +1,6 @@
 class UserPolicy < ApplicationPolicy
   def index?
     user.admin?
-    byebug
   end
 
   def show?
