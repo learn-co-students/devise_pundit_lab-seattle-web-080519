@@ -1,24 +1,18 @@
 class UserPolicy < ApplicationPolicy
-
-  def initialize(current, other)
-    @current = current
-    @other = other
-  end
-
   def index?
-    @current.admin?
+    user.admin?
+    byebug
   end
 
   def show?
-    @current == @other || @current.admin?
+    record == user || user.admin?
   end
 
   def update?
-    @current.admin?
+    record == user || user.admin?
   end
 
   def destroy?
-    return false if(@current == @other)
-    @current.admin?
+    user.admin? && (record != user)
   end
 end
