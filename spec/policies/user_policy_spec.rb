@@ -10,10 +10,8 @@ describe UserPolicy do
       expect(UserPolicy).not_to permit(current_user)
     end
     it "allows access for an admin" do
-      byebug
       puts "role= #{admin.role.nil?}"
       expect(UserPolicy).to permit(admin)
-      byebug
     end
   end
 
